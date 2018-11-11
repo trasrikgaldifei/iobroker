@@ -1,4 +1,4 @@
-# DOCKERFILE for ioBroker based on Debian Stretch (slim version) and NodeJS 10
+# DOCKERFILE for ioBroker based on Debian Stretch (slim version) and NodeJS 8
 
 FROM debian:stretch-slim
 MAINTAINER Joachim Heilig <docker@heilig.cc>
@@ -11,8 +11,8 @@ RUN apt-get update && apt-get install -y build-essential python apt-utils curl u
 RUN rm -rf /var/lib/apt/lists/* && localedef -i de_DE -c -f UTF-8 -A /usr/share/locale/locale.alias de_DE.UTF-8
 ENV LANG de_DE.utf8
 
-# Install NodeJS 10
-RUN curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+# Install NodeJS 8
+RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 RUN apt-get install -y nodejs
 
 # Install Startup Script
